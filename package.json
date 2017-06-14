@@ -1,0 +1,23 @@
+{
+  "name": "jira-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalgebauer/jira-proxy.git"
+  },
+  "author": "michal.gebauer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michalgebauer/jira-proxy/issues"
+  },
+  "homepage": "https://github.com/michalgebauer/jira-proxy#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3"
+  }
+}
