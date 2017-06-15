@@ -37,5 +37,28 @@
                 </form>
             </div>
         </div>
+        <div class="aui-page-panel">
+            <form class="aui">
+                    <div class="field-group">
+                        <label for="search-jql">Jql</label>
+                        <input class="text long-field" type="text"
+                            id="jql" name="search-jql" placeholder="Jql">
+                        <div class="description">Jira JQL query.</div>
+                    </div>
+                    <div class="field-group">
+                        <button class="aui-button" id="searchButton">Search</button>
+                    </div>
+            </form>
+
+            <table id="search" class="aui">
+                <thead>
+                    <th>Issue</th>
+                    <th>asignee</th>
+                    <th>Summary</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
