@@ -8,50 +8,17 @@
         <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-experimental.min.js"></script>
         <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-datepicker.min.js"></script>
         <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-soy.min.js"></script>
+        <script src="proxy-login.js"></script>
         <script src="proxy.js"></script>
-        <style>
-            .jira-proxy-login {
-                border-radius: 4px 4px 4px 4px;
-                border-width: 1px;
-                margin-left: auto;
-                margin-right: auto;
-                width: 460px;
-                padding: 20px;
-            }
-        </style>
     </head>
     <body>
-        <h1 id="hello"></h1>
-        <div class="aui-page-panel jira-proxy-login">
-            <div class="aui-page-panel-inner">
-                <form class="aui">
-                    <div class="aui-message aui-message-warning">
-                        <p>You must log in to access this page.</p>
-                    </div>
-
-                    <div class="field-group">
-                        <label for="login-username">Username</label>
-                        <input class="text medium-field" type="text"
-                            id="username" name="login-username">
-                    </div>
-                    <div class="field-group">
-                        <label for="login-password">Password</label>
-                        <input class="text medium-field" type="password"
-                            id="password" name="login-password">
-                    </div>
-                    <div class="field-group">
-                        <button class="aui-button" id="login">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
         <div class="aui-page-panel">
             <form class="aui">
                     <div class="field-group">
                         <label for="search-jql">Jql</label>
                         <input class="text long-field" type="text"
                             id="jql" name="search-jql" placeholder="Jql">
-                        <div class="description">Jira JQL query.</div>
+                        <div class="description">Jira JQL query</div>
                     </div>
                     <div class="field-group">
                         <button class="aui-button" id="searchButton">Search</button>
