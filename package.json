@@ -18,6 +18,7 @@
   "homepage": "https://github.com/michalgebauer/jira-proxy#readme",
   "dependencies": {
     "cookie-parser": "^1.4.3",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "express-http-proxy": "^1.0.3"
   }
 }
