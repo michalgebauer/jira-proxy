@@ -48,6 +48,10 @@ app.use('/proxy', proxy('https://jiratest.uniqa.at', {
     }
 }));
 
+app.get("/get", function(req, res) {
+    console.log(req.params.a);
+});
+
 
 var server = app.listen(3000, function() {
     console.log("started on port 3000");

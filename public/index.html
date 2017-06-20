@@ -1,6 +1,5 @@
 <html>
     <head>
-        <title>Todo s jQuery</title>
         <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/6.0.6/css/aui.min.css" media="all">
         <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/6.0.6/css/aui-experimental.min.css" media="all">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -8,32 +7,26 @@
         <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-experimental.min.js"></script>
         <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-datepicker.min.js"></script>
         <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-soy.min.js"></script>
-        <script src="proxy-login.js"></script>
-        <script src="proxy.js"></script>
     </head>
     <body>
-        <div class="aui-page-panel">
-            <form class="aui">
-                    <div class="field-group">
-                        <label for="search-jql">Jql</label>
-                        <input class="text long-field" type="text"
-                            id="jql" name="search-jql" placeholder="Jql">
-                        <div class="description">Jira JQL query</div>
-                    </div>
-                    <div class="field-group">
-                        <button class="aui-button" id="searchButton">Search</button>
-                    </div>
-            </form>
-
-            <table id="search" class="aui">
-                <thead>
-                    <th>Issue</th>
-                    <th>asignee</th>
-                    <th>Summary</th>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
+        <input type="text" id="param" />
+        <button id="send">send</button>
+        <ul>
+        </ul>
     </body>
+    <script>
+        $("#send").click(function() {
+            var text = encodeURIComponent($("#param").val());
+            $.ajax({
+                url: "get",
+                type: "get",
+                data: {
+                    a: $("#param").val()
+                }
+            });
+
+            $("ul").append("<li>" + AJS.escapeHtml($("#param").val()) + "</li>");
+
+        })
+    </script>
 </html>
