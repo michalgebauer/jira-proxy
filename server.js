@@ -49,7 +49,7 @@ app.use('/proxy', proxy('https://jiratest.uniqa.at', {
 }));
 
 app.get("/get", function(req, res) {
-    console.log(req.params.a);
+    console.log(req.query.a);
 });
 
 
