@@ -1,9 +1,11 @@
 var proxyServer = {
     _default: {
-        startInterval: true,
-        hideAfterLogin: false
-        ///
+        startInterval: false,
+        hideAfterLogin: false,
+        onLogin: null
     },
+
+    myself: {},
 
     init: function(param) {
         var options = $.extend({}, this._default, param);
@@ -15,10 +17,11 @@ var proxyServer = {
             id: "proxy-login-wrapper"
         });
         $("body").prepend($loginWrapper);
-        $loginWrapper.load("proxy-login.html");
+        $loginWrapper.load("/proxy-login.html");
         // check if you are logged in
         this.proxyLoginCheck();
 
+        var self = this;
         $("#proxy-login-wrapper").on("click", "#proxy-login-button", function(e) {
             e.preventDefault();
 
@@ -27,9 +30,8 @@ var proxyServer = {
                 password: $("#password").val()
             };
 
-            var self = this;
             $.ajax({
-                url: "proxy/rest/auth/1/session",
+                url: "/proxy/rest/auth/1/session",
                 type: "post",
                 contentType: "application/json",
                 headers: {
@@ -41,10 +43,10 @@ var proxyServer = {
             });
         })
 
-        if(this.options.startInterval) {
+        if(options.startInterval) {
             this.startCheck();
         }
-        if(this.options.hideAfterLogin) {
+        if(options.hideAfterLogin) {
             //
         }
     },
@@ -64,7 +66,7 @@ var proxyServer = {
 
         var self = this;
         $.ajax({
-            url: "proxy/rest/api/2/myself",
+            url: "/proxy/rest/api/2/myself",
             type: "get",
             dataType: "json"
         }).done(function(me) {
@@ -72,6 +74,9 @@ var proxyServer = {
                 body: '<p> You are logged in as <strong>' + me.key + '</strong> (<a href="#">check</a>).</p>',
                 closeable: false
             });
+            self.myself = me;
+            AJS.params.loggedInUser = proxyServer.myself.key;
+            $("#proxy-login-wrapper").slideUp(1000);
         }).fail(function() {
             AJS.messages.warning("#loginMessage", {
                 body: '<p>You must log in to access this page (<a href="#">check</a>).</p>',
@@ -80,7 +85,7 @@ var proxyServer = {
         }).always(function() {
             $("#loginMessage a").click(function(e) {
                 e.preventDefault();
-                self.proxyLoginCheck();
+                proxyLoginCheck();
             });
         });
     }
@@ -88,6 +93,9 @@ var proxyServer = {
 
 $(document).ready(function() {
     proxyServer.init({
+        onLogin: function() {
+            AJS.params.loggedInUser = proxyServer.myself.key;
+        },
         hideAfterLogin: true
     });
 });

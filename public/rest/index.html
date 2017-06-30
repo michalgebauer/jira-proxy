@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Todo s jQuery</title>
+        <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/6.0.6/css/aui.min.css" media="all">
+        <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/6.0.6/css/aui-experimental.min.css" media="all">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui.min.js"></script>
+        <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-experimental.min.js"></script>
+        <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-datepicker.min.js"></script>
+        <script src="//aui-cdn.atlassian.com/aui-adg/6.0.6/js/aui-soy.min.js"></script>
+        <script src="/proxy-login.js"></script>
+        <script src="rest.js"></script>
+        <!--<script src="banka.js"></script>-->
+    </head>
+    <body>
+        <form class="aui">
+            <div class="field-group">
+                <label for="rest-type">HTTP method<span class="aui-icon icon-required">required</span></label>
+                <select class="select" id="rest-type" name="rest-type">
+                    <option>GET</option>
+                    <option>POST</option>
+                    <option>PUT</option>
+                    <option>DELETE</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label for="rest-url">Url<span class="aui-icon icon-required">required</span></label>
+                <input class="text" type="text" id="rest-url" name="rest-url" title="Text input">
+                <div class="description">Rest url</div>
+            </div>
+            <fieldset>
+                <legend><span>Parameters</span></legend>
+                <div class="field-group">
+                    <label for="rest-params">Parameters</label>
+                    <textarea class="textarea" rows="10" cols="200" name="rest-params" id="rest-params" placeholder="Your parameters here..."></textarea>
+                </div>
+            </fieldset>
+            <div class="buttons-container">
+                <div class="buttons">
+                    <input class="button submit" type="submit" value="Send" id="rest-send">
+                    <a class="cancel" href="#">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
