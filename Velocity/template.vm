@@ -1,0 +1,47 @@
+<html>
+    <body>
+        #parse("menu.vm")
+
+        Name is $name
+
+        #set($velocity = "Velocity")
+        $velocity
+
+        #set($nick = "$name")
+        $nick
+
+        #set($nick2 = '$name')
+        $nick2
+
+        ## this is comment
+        #* this is comment
+            on more lines
+         *#
+##            $foo
+##            $mudSlinger
+##            $mud-slinger
+##            $mud_slinger
+##            $mudSlinger1
+
+        #set ($name = "Jan")
+        $name
+
+        $person.FirstName $person.LastName age: $person.Age
+        is old: $person.isOld()
+
+        owns: $property.Car
+
+        $person.setAge(30)
+        new age: $person.Age
+
+        ${person.FirsName} je $person.Agerocny
+        ${person.FirsName} je ${person.Age}rocny
+
+        $undefinedName
+        $!undefinedName
+
+        #if("aaa" == "aaa")
+            equals
+        #end
+    </body>
+</html>

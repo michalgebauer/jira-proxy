@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script src=""></script>
+        <title>$title</title>
+    </head>
+
+    <body>
+        Taketo mame ponozky:
+        Velkost: ${ponozky.Velkost}ky
+        Farba: $ponozky.Farba
+        Pocet: $ponozky.getPocet()
+        $ponozky.setPocet(9)
+        #if($ponozky.getPocet() > 10)
+            Pocet: $ponozky.getPocet()
+        #end
+        Material: $material
+        #set($material = "bambus")
+        ## fdsfsfsdsfdsf
+        #*
+        sadsads
+        dsadsad
+         *#
+
+        Material: $material
+
+        Mam auto: $property.Car
+
+    <table>
+        <thead>
+            <th>Velkost</th>
+            <th>FArba</th>
+            <th>Pocet</th>
+        </thead>
+        <tbody>
+
+    #foreach($p in $pList)
+        <tr>
+            <td>$p.Velkost</td>
+            <td>$p.Farba</td>
+            <td>$p.Pocet</td>
+        </tr>
+    #end
+        </tbody>
+    </table>
+    </body>
+    <script>
+
+    </script>
+
+\#parse("menu.vm")
+
+#macro (mojeMakro $text)
+    <span>$text</span>
+#end
+
+#mojeMakro("Jozef")
+#mojeMakro("Fero")
+
+<script>
+    mojSkript.setUser(\$user);
+</script>
+
+</html>
