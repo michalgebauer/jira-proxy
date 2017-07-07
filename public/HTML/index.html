@@ -1,0 +1,233 @@
+<html>
+    <head>
+        <title>Hello HTML</title>
+        <style>
+            table {
+                table-layout: fixed;
+            }
+
+             td, th, #parent  {
+             border: 1px solid grey;
+            /*width: 15.2em;*/
+            /*height: 100px;*/
+            font-size: 20px;
+            
+             }
+             h1 {
+                 color: green;
+             }
+             #parent div {
+                /* width: 200px; */
+                border: inherit;
+                /* width: 100%; */
+                margin: 10px;
+                padding: 10px;
+                overflow-x: scroll;
+             }
+
+             ul.menu li {
+                 border: 1px solid red;
+                float: left;
+                display: block;
+                width: 100px;
+                height: 100px;
+                padding: 10px;
+                margin: 10px;
+                cursor: pointer;
+             }
+
+             ul.menu li span {
+                 border: 1px solid red;
+                 position: relative;
+                 left: 20px;
+                 top: 20px;
+             }
+
+             ul.menu li span.absolute {
+                 border: 1px solid red;
+                 position: absolute;
+                 /*right: 20px;*/
+                 top: 20px;
+                 /*bottom: 20px;*/
+                 position:fixed;
+                 background-color: aqua;
+                /* opacity: 0.5; */
+                z-index: -1000;
+             }
+
+             ul.menu li.afterclass::after {
+                content: "+!+@+";
+                font-style: italic;
+             }
+
+             ul.menu li {
+                border: 1px solid blue;
+             }
+             
+             table {
+
+             }
+
+             ol {
+                 clear: left;
+             }
+
+             @media(min-width: 1024px) {
+
+             }
+        </style>
+        <link href="css.css"  rel="stylesheet">
+    </head>
+    <body>
+        <div id="parent">
+            <div>asdsadas</div> 
+            <div>asdsadas</div> 
+            <div>asdsadas</div> 
+        </div>
+
+        <h1 id="title" style="color: blue;">Hello HTML</h1>
+        <h2>Hello HTML</h2>
+        <h3>Hello HTML</h3>
+        <h4>Hello HTML</h4>
+        <h5>Hello HTML</h5>
+        <h6>Hello HTML</h6>
+
+        <p style="border: 1px solid green;">
+            KOŠICE. <b>Po prevalení</b>, že              <strong>Najvyšší</strong> <em>kontrolný</em> úrad (NKÚ) konštatoval nesúlad nájomnej zmluvy medzi mestom Košice a parkovacou firmou EEI so zákonom, zverejnil magistrát vo štvrtok tlačovú správu.
+
+            Čítajte<br /> viac: 
+        </p>
+        <p>
+            <i>KOŠICE</i>. Po preval<sub>ení</sub>, že <sup>Naj</sup>vyšší kontrolný úrad (NKÚ) konštatoval nesúlad nájomnej <span>zmluvy medzi mestom Košice</span> a parkovacou firmou EEI so zákonom, zverejnil magistrát vo štvrtok tlačovú správu.
+
+            Čítajte viac: 
+        </p>
+
+        <div>
+            <ul class="menu">
+                <li data-url=""><span>menu1</span></li>
+                <!--<li>-->
+                    <!--<ul>-->
+                        <li><span class="absolute">menu2</span></li>
+                        <li class="afterclass">menu3</li>
+                        <li>menu4</li>
+                    <!--</ul>-->
+                <!--</li>-->
+                <li>menu5</li>
+            </ul>
+        </div>
+
+        <ol>
+            <li>jeden</li>
+            <li>
+                <ol>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ol>
+            </li>
+            <li>tri</li>
+        </ol>
+
+        <dl>
+            <dt>auto</dt>
+            <dd>vozidlo s 4 kolesami</dd>
+            <dt>auto</dt>
+            <dd>vozidlo s 4 kolesami</dd>
+            <dt>auto</dt>
+            <dd>vozidlo s 4 kolesami</dd>
+        </dl>
+
+        <a href="click.html">klikni!</a>
+        <a href="../bootstrap/index.html">klikni!</a>
+        <a href="/index.html">klikni!</a>
+        <a href="https://www.google.com">klikni!</a>
+        
+        <a href="#title">title</a>
+        
+        
+        <a href="#">javascript</a>
+        <a href="javascript:return void(0)">javascript</a>
+
+        <a href="mailto:michal.gebauer@insdata.sk">miso</a>
+
+        <img src="2616877_600x400.jpegdsada" alt="obrazok zo sme" title="popis obrazku">
+        <img src="2616877_600x400.jpeg" alt="obrazok zo sme" title="popis obrazku">
+
+        <table style="border: 1px solid grey;">
+            <thead>
+                <tr>
+                    <th>nazov</th>
+                    <th>pocet</th>
+                    <th>suma</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>adfsdfdsf sfd sfdssa</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>adssa</td>
+                    <td>10</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>sfdfds</td>
+                    <td>10</td>
+                    <td>200</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <form action="/save.php" method="post">
+            <input type="text" value="Nieco" maxlength="20" name="text" disabled="true">
+            <div>
+                <label for="heslo">Zadaj password</label>
+                <input type="password" name="pwd" id="heslo">
+            </div>
+            <textarea cols="20" rows="10" name="area">sadsadsas</textarea>
+            <div>
+                <input type="radio" value="moznost 1" name="moznost" checked="checked">
+                <input type="radio" value="moznost 2" name="moznost">
+            </div>
+                <input type="checkbox" value="moznost 1" name="ch">   
+                <input type="checkbox" value="moznost 2" name="ch2" checked="checked">
+            <div>
+
+            <fieldset>
+                <legend>sadsds</legend>
+                <!--</div>-->
+                    <input type="file" name="file">   
+                <!--<div>-->
+                
+                <!--</div>-->
+                    <input type="submit" value="Stlac ma">   
+                <!--<div>-->
+            
+                <select name="select" disabled="true">
+                    <option value="1">qeq</option>
+                    <option value="2">qweq</option>
+                    <option value="3" selected>wqewq</option>
+                </select>
+                
+                <select name="select2" multiple="multiple">
+                    <option value="1">qeq</option>
+                    <option value="2">qweq</option>
+                    <option value="3" selected>wqewq</option>
+                </select>
+            </fieldset>
+            
+            <input type="hidden" name="_select" value="10">
+
+            <button>tlacitko</button>   
+        </form>
+
+    </body>
+</html>

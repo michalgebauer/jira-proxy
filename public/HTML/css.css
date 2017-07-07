@@ -1,0 +1,16 @@
+h1 {
+    color: red;
+}
+
+p span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 'sans-serif';
+    font-size: 30px;
+    text-align: justify;
+    line-height: 1.5;
+    vertical-align: bottom;
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: bold;
+    color: brown;
+}
+
